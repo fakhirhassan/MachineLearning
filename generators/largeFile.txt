@@ -1,0 +1,53 @@
+Introduction
+With recent Flutter updates, FlatButton has been deprecated in favor of TextButton, ElevatedButton, and OutlinedButton. However, when working with tappable images or widgets that do not look like traditional buttons, GestureDetector provides a more flexible approach. In this blog, I will walk you through how I used GestureDetector to create an interactive dice roller app.
+
+Why GestureDetector?
+GestureDetector is a widget in Flutter that detects gestures like taps, swipes, long presses, and more. It is particularly useful when you want to add tap functionality to non-button UI elements like images or custom widgets.
+
+Implementing GestureDetector for Tappable Dice
+In my Flutter dice roller app, I needed the dice images to act as buttons. Instead of using traditional buttons, I wrapped the Image.asset widgets inside GestureDetector to detect taps and update the dice values.
+
+Code Implementation
+dart
+Copy
+Edit
+@override
+Widget build(BuildContext context) {
+  return Center(
+    child: Row(
+      children: [
+        Expanded(
+          child: GestureDetector(
+            onTap: rollDice1, // Function to roll left dice
+            child: Padding(
+              padding: const EdgeInsets.all(16.0),
+              child: Image.asset('images/dice$leftDiceNumber.png'),
+            ),
+          ),
+        ),
+        Expanded(
+          child: GestureDetector(
+            onTap: rollDice2, // Function to roll right dice
+            child: Padding(
+              padding: const EdgeInsets.all(16.0),
+              child: Image.asset('images/dice$rightDiceNumber.png'),
+            ),
+          ),
+        ),
+      ],
+    ),
+  );
+}
+How It Works
+GestureDetector wraps each dice image.
+The onTap property is assigned a function (rollDice1 or rollDice2) that updates the dice number.
+When a user taps a dice, the corresponding function is triggered, changing the image dynamically.
+Advantages of GestureDetector
+Works with Any Widget – Unlike TextButton, GestureDetector can be used with images, text, containers, or any custom widget.
+More Gesture Options – It supports multiple gestures like onDoubleTap, onLongPress, and onPanUpdate.
+More Customization – You can add visual effects, animations, or haptic feedback on tap.
+Conclusion
+Replacing FlatButton or TextButton with GestureDetector provides a more intuitive and flexible way to make non-button UI elements interactive. In my dice roller app, this approach helped me seamlessly integrate tap functionality with images. If you're looking to add custom interactions beyond standard buttons, GestureDetector is an excellent choice.
+
+Would you use GestureDetector in your next Flutter project? Let me know your thoughts! 🚀
+
