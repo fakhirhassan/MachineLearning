@@ -1,0 +1,9 @@
+2025-01-28 19:50:51-root-DEBUG-This is a debug message
+2025-01-28 19:50:51-root-INFO-This is an info message
+2025-01-28 19:50:51-root-WARNING-This is a warning message
+2025-01-28 19:50:51-root-ERROR-This is an error message
+2025-01-28 19:50:51-root-CRITICAL-This is a critical message
+2025-01-28 19:52:23 - ArithmethicApp - DEBUG - Adding 10 + 15= 25
+2025-01-28 19:52:23 - ArithmethicApp - DEBUG - Subtracting 15 - 10 = 5
+2025-01-28 19:52:23 - ArithmethicApp - DEBUG - Multiplying 10 * 20 = 200
+2025-01-28 19:52:23 - ArithmethicApp - ERROR - Division by zero error
